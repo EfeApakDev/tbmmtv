@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Canlı TV İzleme</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: white;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    .credit {
+      font-size: 12px;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="mb-4">Canlı TV İzleme</h1>
+    <p class="mb-4">Burada TBMM TV'sini canlı olarak izleyebilirsiniz.</p>
+    <div class="embed-responsive embed-responsive-16by9 mb-4">
+      <video class="embed-responsive-item" controls>
+        <source src="https://meclistv-live.ercdn.net/meclistv/meclistv_720p.m3u8?e=&st=" type="application/x-mpegURL">
+        Tarayıcınız video etiketini desteklemiyor.
+      </video>
+    </div>
+    <p class="credit">Yapımcı: Efe Apak</p>
+  </div>
+
+  <script>
+    var video = document.querySelector('video');
+    video.addEventListener('keydown', function(e) {
+      if (e.keyCode === 37) { // Sol ok tuşu (geri al)
+        video.currentTime -= 10;
+      } else if (e.keyCode === 39) { // Sağ ok tuşu (ileri al)
+        video.currentTime += 10;
+      }
+    });
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
